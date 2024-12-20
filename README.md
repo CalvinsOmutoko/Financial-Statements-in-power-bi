@@ -10,7 +10,7 @@ By combining SQL for data extraction and transformation with Power BI's visualiz
 ![Image](Financials.jpg)
 
 
-###Problem Statement
+### Problem Statement
 
 The organization currently relies on manual processes to analyze financial statements, which is time-consuming and potentially error-prone. Financial teams need to regularly track key metrics including Gross Profit %, EBIT %, Net Income %, and the Current Ratio between Current Assets and Current Liabilities. The challenge is to automate this process by developing a Power BI dashboard that directly connects to the company database, providing real-time financial analysis and trend visualization to support faster, more accurate decision-making.
 
@@ -41,26 +41,29 @@ Established relationships between tables.
 
 ### DAX (Data Analysis Expressions)
 Use DAX (Data Analysis Expressions) to create key measures such as:
+
     -  ```Income statement = 
-       VAR DISPLAY_FILTER = NOT ISFILTERED(DimGlAcc[Subcategory])
-       RETURN
-SWITCH(TRUE(),
-SELECTEDVALUE(DimHeaders[MeasureName]) ="Subtotal" && DISPLAY_FILTER, [I/S Subtotal],
-SELECTEDVALUE(DimHeaders[MeasureName]) = "Per_Of_Revenue"&& DISPLAY_FILTER,  [% Of Revenue],
-[I/S Amount]
-)```
+     VAR DISPLAY_FILTER = NOT ISFILTERED(DimGlAcc[Subcategory])
+    RETURN
+    SWITCH(TRUE(),
+    SELECTEDVALUE(DimHeaders[MeasureName]) ="Subtotal" && DISPLAY_FILTER, [I/S Subtotal],
+    SELECTEDVALUE(DimHeaders[MeasureName]) = "Per_Of_Revenue"&& DISPLAY_FILTER,  [% Of Revenue],
+    [I/S Amount]
+    )```
+    
 That dynamically calculates and determine what kind of financial data to display in each row of the income statement based on the measure name.
 
    
-    -  ```Balance Sheet = 
-VAR Display_filter = NOT ISFILTERED(DimGlAcc[Subcategory])
-RETURN
-SWITCH(TRUE(),
-SELECTEDVALUE(DimHeaders[MeasureName]) = "Section_Subtotal" && Display_filter,[B/s Subtotal],
-SELECTEDVALUE(DimHeaders[MeasureName]) = "Retained_earnings" && Display_filter,[Retained earnings],
-SELECTEDVALUE(DimHeaders[MeasureName]) = "Total_Equity" && Display_filter,[Total Equity],
-SELECTEDVALUE(DimHeaders[MeasureName]) = "Total_LE" && Display_filter,[Total Liabilities & Equity],
-[Cumulative Amount])```
+    - ```Balance Sheet = 
+    VAR Display_filter = NOT ISFILTERED(DimGlAcc[Subcategory])
+    RETURN
+    SWITCH(TRUE(),
+    SELECTEDVALUE(DimHeaders[MeasureName]) = "Section_Subtotal" && Display_filter,[B/s Subtotal],
+    SELECTEDVALUE(DimHeaders[MeasureName]) = "Retained_earnings" && Display_filter,[Retained earnings],
+    SELECTEDVALUE(DimHeaders[MeasureName]) = "Total_Equity" && Display_filter,[Total Equity],
+    SELECTEDVALUE(DimHeaders[MeasureName]) = "Total_LE" && Display_filter,[Total Liabilities & Equity],
+    [Cumulative Amount])```
+
 That dynamically calculates and determine what kind of financial data to display in each row of the Balance sheet based on the measure name.
 
 
@@ -73,6 +76,7 @@ Detailed Financial Reporting
 The analysis focused on the Income Statement to provide a clear picture of the organization's profitability and operational efficiency. Key insights and visualizations developed to highlight financial performance and trends.
 
 ### Key Analysis Areas
+
 ***Detailed Financial Reporting**
 Used a matrix visualization to display the complete income statement, providing a detailed, structured breakdown of revenues, expenses, and profits.Highlighting key performance indicators like Gross Profit, EBIT, Net Income.
 
@@ -93,3 +97,7 @@ Displayed critical metrics such as the gross margin ratio and operating margin r
 ![Balance sheet](Balance_sheet.PNG)
 
 
+
+Detailed Breakdown:
+
+The matrix visualization provides a comprehensive breakdown of key balance sheet components, including assets (current and non-current), liabilities (current and long-term), and equity. This structure ensures stakeholders can identify and analyze significant financial positions effectively.
