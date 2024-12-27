@@ -12,16 +12,26 @@ By combining SQL for data extraction and transformation with Power BI's visualiz
 
 ### Problem Statement
 
-The organization currently relies on manual processes to analyze financial statements, which is time-consuming and potentially error-prone. Financial teams need to regularly track key metrics including Gross Profit %, EBIT %, Net Income %, and the Current Ratio between Current Assets and Current Liabilities. The challenge is to automate this process by developing a Power BI dashboard that directly connects to the company database, providing real-time financial analysis and trend visualization to support faster, more accurate decision-making.
+Gl Retail Inc currently relies on manual processes to analyze financial statements, which is time-consuming and potentially error-prone. Finance teams need to regularly track key metrics including Gross Profit %, EBIT %, Net Income %, and the Current Ratio between Current Assets and Current Liabilities. The challenge is to automate this process by developing a Power BI dashboard that directly connects to the company database, providing real-time financial analysis and trend visualization to support faster, more accurate decision-making.
 
 ### Data Sources
 The financial statement analysis draws from the following primary data sources:
+<<<<<<< Updated upstream
     **SQL Server Database**: GL Retail Server
     GL Retail Server maintained by [CFI](https://corporatefinanceinstitute.com)
     FactGLTran: Contains transaction records
     GL Accounts: Chart of accounts and categorization
     Stores: Store-level information
     Region: Geographical segmentation data
+=======
+    - SQL Database:
+Contains detailed transaction records and account balances
+GL Retail Server maintained by [CFI](https://corporatefinanceinstitute.com)
+Queried financial data FactGLTran, GL Accounts, Stores, and Region Tables.
+    - Headers Table: [View here](Financial_Statements_Headers_Table.xlsx)
+Added an excel  table to format the income statement and balance sheet structure.
+    - Used Power Query’s Advanced Editor to create a date table with calculated columns for time intelligence. [View here](Date_Dimension.txt)
+>>>>>>> Stashed changes
     
 
 #### Supporting Data
