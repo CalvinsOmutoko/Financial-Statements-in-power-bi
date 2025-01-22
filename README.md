@@ -15,25 +15,25 @@ By combining SQL for data extraction and transformation with Power BI's visualiz
 Gl Retail Inc currently relies on manual processes to analyze financial statements, which is time-consuming and potentially error-prone. Finance teams need to regularly track key metrics including Gross Profit %, EBIT %, Net Income %, and the Current Ratio between Current Assets and Current Liabilities. The challenge is to automate this process by developing a Power BI dashboard that directly connects to the company database, providing real-time financial analysis and trend visualization to support faster, more accurate decision-making.
 
 ### Data Sources
+
 The financial statement analysis draws from the following primary data sources:
-<<<<<<< Updated upstream
-    **SQL Server Database**: GL Retail Server
-    GL Retail Server maintained by [CFI](https://corporatefinanceinstitute.com)
-    FactGLTran: Contains transaction records
-    GL Accounts: Chart of accounts and categorization
-    Stores: Store-level information
-    Region: Geographical segmentation data
-=======
+
+    
     - SQL Database:
+    
 Contains detailed transaction records and account balances
 GL Retail Server maintained by [CFI](https://corporatefinanceinstitute.com)
-Queried financial data FactGLTran, GL Accounts, Stores, and Region Tables.
-    - Headers Table: [View here](Financial_Statements_Headers_Table.xlsx)
-Added an excel  table to format the income statement and balance sheet structure.
-    - Used Power Query’s Advanced Editor to create a date table with calculated columns for time intelligence. [View here](Date_Dimension.txt)
->>>>>>> Stashed changes
-    
 
+ FactGLTran: Contains transaction records
+    
+    GL Accounts: Chart of accounts and categorization
+    
+    Stores: Store-level information
+    
+    Region: Geographical segmentation data
+    
+Queried financial data FactGLTran, GL Accounts, Stores, and Region Tables.
+    
 #### Supporting Data
 - **Headers Table**: Custom Excel table for financial statement structuring. [View here](Financial_Statements_Headers_Table.xlsx)
 - **Date Dimension**: Generated using Power Query for time intelligence. [View here](Date_Dimension.txt)
@@ -56,7 +56,7 @@ Established relationships between tables.
 ### DAX (Data Analysis Expressions) Implementation
 Our Power BI solution leverages sophisticated DAX measures to create dynamic financial calculations that adapt to different reporting contexts. Two key measures form the backbone of our financial reporting system
 
-    -  ```Income statement = 
+    ```Income statement = 
      VAR DISPLAY_FILTER = NOT ISFILTERED(DimGlAcc[Subcategory])
     RETURN
     SWITCH(TRUE(),
@@ -68,7 +68,7 @@ Our Power BI solution leverages sophisticated DAX measures to create dynamic fin
 That dynamically calculates and determine what kind of financial data to display in each row of the income statement based on the measure name.
 
    
-    - ```Balance Sheet = 
+    ```Balance Sheet = 
     VAR Display_filter = NOT ISFILTERED(DimGlAcc[Subcategory])
     RETURN
     SWITCH(TRUE(),
