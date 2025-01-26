@@ -7,7 +7,7 @@ Analyzing financial data effectively is critical for organizations to understand
 This project addresses these challenges by utilizing Power BI to create a comprehensive and interactive financial statement dashboard. 
 By combining SQL for data extraction and transformation with Power BI's visualization tools, this solution aims to enable businesses track critical metrics like revenue, expenses, and profitability in real time, fostering better insights and more agile decision-making.
 
-![Image](Financials.jpg)
+![Image](F.s_power_BI.png)
 
 
 ### Problem Statement
@@ -37,8 +37,10 @@ Queried financial data FactGLTran, GL Accounts, Stores, and Region Tables.
 #### Supporting Data
 - **Headers Table**: Custom Excel table for financial statement structuring. [View here](Financial_Statements_Headers_Table.xlsx)
 - **Date Dimension**: Generated using Power Query for time intelligence. [View here](Date_Dimension.txt)
+  
 
     ### ETL (Extract, Transform, Load) Process
+  
 Used SQL queries to retrieve all financial data directly from the centralized database from FactGLTran, GL Accounts, Stores, and Region tables.
 Created dedicated SQL view to simplify data retrieval and improve query efficiency.
 The SQL querry used to retrieve the data and create sql view as a staging . [View SQL Code](GL_Trans_View.sql)
@@ -138,9 +140,13 @@ This Power BI financial dashboard project has successfully transformed GL Retail
 The visualization design emphasizes critical financial metrics through:
 
 Color-coded waterfall charts showing income statement breakdowns
+
 Trend analysis for margin ratios and revenue patterns
+
 Interactive time-series comparisons across fiscal periods
+
 Automated ratio calculations and performance indicators
+
 Clear presentation of balance sheet components
 
 Through analysis of GL Retail Inc.'s financial performance from 2019 to 2021, the dashboard reveals several significant trends and opportunities. The company has maintained strong liquidity with a healthy current ratio averaging above 2.0, indicating solid ability to meet short-term obligations. 
@@ -150,10 +156,14 @@ Revenue has experienced a gradual decline from $25.3M in 2019 to $23.9M in 2021,
 
 **Key areas requiring immediate attention include:**
 
-Declining operating margins
-Downward revenue trend
-Rising operating expenses
-High cash holdings with potential for better utilization
-Cost of sales management
+Declining operating margins.
+
+Downward revenue trend.
+
+Rising operating expenses.
+
+High cash holdings with potential for better utilization.
+
+Cost of sales management.
 
 The Power BI implementation has enhanced financial visibility and decision-making capability, allowing stakeholders to identify these trends quickly and monitor the impact of strategic initiatives in real-time. This transformed reporting system provides the foundation for more informed and timely business decisions, supporting GL Retail Inc.'s future growth and performance improvement efforts.
